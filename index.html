@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>客户管理智能参谋｜交互原型</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: light-dark(#f4f7fb, #0d131c);
+      color: light-dark(#172033, #eef4ff);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    header {
+      padding: 52px max(24px, calc((100% - 1120px) / 2));
+      background: linear-gradient(135deg, #2047bd, #315efb 55%, #6486ff);
+      color: #fff;
+    }
+    header p { max-width: 760px; margin: 12px 0 0; opacity: .88; line-height: 1.7; }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 48px); font-weight: 600; }
+    main { max-width: 1120px; margin: 0 auto; padding: 36px 24px 64px; }
+    .note {
+      margin-bottom: 24px;
+      padding: 14px 16px;
+      border-left: 4px solid #315efb;
+      background: light-dark(#eaf0ff, #172644);
+      line-height: 1.65;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    article {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      padding: 24px;
+      border: 1px solid light-dark(#dce3ee, #29384e);
+      border-radius: 16px;
+      background: light-dark(#fff, #16202e);
+      box-shadow: 0 16px 36px rgb(20 39 78 / 8%);
+    }
+    .number { color: #315efb; font-weight: 600; letter-spacing: .08em; }
+    h2 { margin: 16px 0 12px; font-size: 22px; font-weight: 600; }
+    article p { flex: 1; margin: 0; color: light-dark(#5e697b, #b5c1d2); line-height: 1.75; }
+    a {
+      display: inline-flex;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 12px 18px;
+      border-radius: 9px;
+      background: #315efb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer { margin-top: 32px; color: light-dark(#687386, #9eacbf); font-size: 14px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } article { min-height: auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>客户管理智能参谋</h1>
+    <p>AI 增强型 CRM 产品交互原型。围绕客户经理的个人经营、单客户洞察和组织经营分析，展示核心页面与关键业务闭环。</p>
+  </header>
+  <main>
+    <div class="note">演示说明：页面数据均为脱敏示例；原型用于展示功能和交互逻辑，不连接真实 CRM、BI 或大模型服务。</div>
+    <section class="grid" aria-label="原型页面入口">
+      <article>
+        <span class="number">01 · 个人经营</span>
+        <h2>客户经理名下客户整体分析</h2>
+        <p>查看客户分布、风险提醒、业绩进展和 AI 策略建议，并通过搜索、筛选和客户详情快速确定跟进优先级。</p>
+        <a href="customer-overview.html">进入页面</a>
+      </article>
+      <article>
+        <span class="number">02 · 单客户经营</span>
+        <h2>客户洞察报告</h2>
+        <p>展示客户画像、跟进建议、证据来源、资源推荐，以及重新生成、对话修正、采纳保存和字段冲突处理。</p>
+        <a href="customer-insight-report.html">进入页面</a>
+      </article>
+      <article>
+        <span class="number">03 · 组织经营</span>
+        <h2>全国地图驾驶舱</h2>
+        <p>从全国经营概览下钻至区域数据，切换风险、到期和业绩指标，并演示总部与区域负责人的权限差异。</p>
+        <a href="national-dashboard.html">进入页面</a>
+      </article>
+    </section>
+    <footer>课程作业交互原型 · 客户管理智能参谋</footer>
+  </main>
+</body>
+</html>

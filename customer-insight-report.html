@@ -1,0 +1,1710 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Customer Insight Report</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Customer Insight Report" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Customer Insight Report&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;crm-insight-report&quot; aria-label=&quot;单客户洞察报告交互原型&quot;&gt;
+  &lt;style&gt;
+    #crm-insight-report {
+      color-scheme: light dark;
+      --cir-bg: light-dark(#eef2f7, #0c121b);
+      --cir-shell: light-dark(#ffffff, #151d28);
+      --cir-surface: light-dark(#ffffff, #182231);
+      --cir-soft: light-dark(#f6f8fb, #111a26);
+      --cir-line: light-dark(#e1e6ee, #2a3748);
+      --cir-text: light-dark(#172033, #edf4ff);
+      --cir-subtext: light-dark(#687386, #aab7ca);
+      --cir-accent: #315efb;
+      --cir-accent-soft: light-dark(#edf2ff, #1c2b56);
+      --cir-success: light-dark(#18794e, #72d5a5);
+      --cir-success-soft: light-dark(#e9f8f0, #18352a);
+      --cir-warning: light-dark(#9a5b00, #ffc26b);
+      --cir-warning-soft: light-dark(#fff5df, #3a2b16);
+      --cir-danger: light-dark(#be3e3e, #ff8e8e);
+      --cir-danger-soft: light-dark(#fff0f0, #3c2026);
+      --cir-radius: 12px;
+      font-family: Inter, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif;
+      color: var(--cir-text);
+      background: transparent;
+    }
+    #crm-insight-report * { box-sizing: border-box; }
+    #crm-insight-report button,
+    #crm-insight-report input,
+    #crm-insight-report select,
+    #crm-insight-report textarea { font: inherit; }
+    #crm-insight-report .cir-stage {
+      position: relative;
+      min-height: 780px;
+      overflow: hidden;
+      border: 1px solid var(--cir-line);
+      border-radius: var(--cir-radius);
+      background: var(--cir-bg);
+    }
+    #crm-insight-report .cir-crm-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 15px 20px; border-bottom: 1px solid var(--cir-line); background: var(--cir-shell);
+    }
+    #crm-insight-report .cir-brand { font-weight: 500; }
+    #crm-insight-report .cir-breadcrumb { color: var(--cir-subtext); font-size: 13px; }
+    #crm-insight-report .cir-customer-base {
+      display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 22px;
+    }
+    #crm-insight-report .cir-customer-base h1 { margin: 0; font-size: 22px; font-weight: 500; }
+    #crm-insight-report .cir-meta { margin-top: 8px; color: var(--cir-subtext); font-size: 13px; }
+    #crm-insight-report .cir-page-actions { display: flex; gap: 9px; align-items: start; flex-wrap: wrap; }
+    #crm-insight-report .cir-action {
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+      min-height: 36px; padding: 7px 13px; border: 1px solid var(--cir-line); border-radius: 8px;
+      color: var(--cir-text); background: var(--cir-shell); cursor: pointer;
+    }
+    #crm-insight-report .cir-action-primary { color: #fff; border-color: var(--cir-accent); background: var(--cir-accent); }
+    #crm-insight-report .cir-action-success { color: #fff; border-color: var(--cir-success); background: var(--cir-success); }
+    #crm-insight-report .cir-action-ghost { background: transparent; }
+    #crm-insight-report .cir-action:disabled { opacity: .55; cursor: wait; }
+    #crm-insight-report .cir-base-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 22px; opacity: .46; }
+    #crm-insight-report .cir-base-panel { min-height: 180px; padding: 16px; border: 1px solid var(--cir-line); border-radius: var(--cir-radius); background: var(--cir-shell); }
+    #crm-insight-report .cir-lines { display: grid; gap: 10px; margin-top: 16px; }
+    #crm-insight-report .cir-line { height: 10px; border-radius: 99px; background: var(--cir-line); }
+    #crm-insight-report .cir-line:nth-child(2) { width: 70%; }
+    #crm-insight-report .cir-line:nth-child(3) { width: 82%; }
+    #crm-insight-report .cir-modal-backdrop {
+      position: absolute; inset: 0; display: grid; place-items: center; padding: 24px;
+      background: light-dark(rgba(24,32,51,.38), rgba(0,0,0,.54));
+    }
+    #crm-insight-report .cir-modal {
+      width: min(980px, 100%); max-height: 730px; display: grid; grid-template-rows: auto auto 1fr auto;
+      overflow: hidden; border: 1px solid var(--cir-line); border-radius: 14px; background: var(--cir-surface);
+      box-shadow: 0 22px 60px light-dark(rgba(22,32,55,.25), rgba(0,0,0,.45));
+    }
+    #crm-insight-report .cir-modal-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 15px 18px; border-bottom: 1px solid var(--cir-line);
+    }
+    #crm-insight-report .cir-title-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    #crm-insight-report .cir-title-row h2 { margin: 0; font-size: 18px; font-weight: 500; }
+    #crm-insight-report .cir-chip { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 8px; border-radius: 99px; font-size: 12px; color: var(--cir-subtext); background: var(--cir-soft); }
+    #crm-insight-report .cir-chip.is-reference { color: var(--cir-accent); background: var(--cir-accent-soft); }
+    #crm-insight-report .cir-chip.is-success { color: var(--cir-success); background: var(--cir-success-soft); }
+    #crm-insight-report .cir-chip.is-warning { color: var(--cir-warning); background: var(--cir-warning-soft); }
+    #crm-insight-report .cir-toolbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 10px 18px; border-bottom: 1px solid var(--cir-line); background: var(--cir-soft);
+    }
+    #crm-insight-report .cir-version { min-height: 34px; padding: 6px 9px; border: 1px solid var(--cir-line); border-radius: 8px; color: var(--cir-text); background: var(--cir-shell); }
+    #crm-insight-report .cir-toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    #crm-insight-report .cir-report-body {
+      display: grid; grid-template-columns: 190px minmax(0,1fr) 255px; min-height: 0; overflow: hidden;
+    }
+    #crm-insight-report .cir-report-nav { padding: 14px 10px; border-right: 1px solid var(--cir-line); background: var(--cir-soft); }
+    #crm-insight-report .cir-report-nav button { width: 100%; padding: 9px 10px; border: 0; border-radius: 8px; color: var(--cir-subtext); background: transparent; text-align: left; cursor: pointer; }
+    #crm-insight-report .cir-report-nav button.is-active { color: var(--cir-accent); background: var(--cir-accent-soft); font-weight: 500; }
+    #crm-insight-report .cir-report-content { min-width: 0; padding: 18px; overflow-y: auto; }
+    #crm-insight-report .cir-report-section { padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--cir-line); }
+    #crm-insight-report .cir-report-section:last-child { border-bottom: 0; }
+    #crm-insight-report .cir-report-section h3 { margin: 0 0 10px; font-size: 15px; font-weight: 500; }
+    #crm-insight-report .cir-summary {
+      padding: 13px 14px; border-left: 3px solid var(--cir-accent); background: var(--cir-accent-soft); line-height: 1.7;
+    }
+    #crm-insight-report .cir-list { display: grid; gap: 10px; }
+    #crm-insight-report .cir-insight {
+      padding: 11px 12px; border: 1px solid var(--cir-line); border-radius: 9px; background: var(--cir-shell);
+    }
+    #crm-insight-report .cir-insight-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    #crm-insight-report .cir-insight-title { font-weight: 500; font-size: 13px; }
+    #crm-insight-report .cir-insight-copy { margin-top: 6px; color: var(--cir-subtext); font-size: 13px; line-height: 1.55; }
+    #crm-insight-report .cir-evidence {
+      display: none; margin-top: 9px; padding: 9px; border-radius: 7px; color: var(--cir-subtext); background: var(--cir-soft); font-size: 12px; line-height: 1.55;
+    }
+    #crm-insight-report .cir-show-evidence .cir-evidence { display: block; }
+    #crm-insight-report .cir-source-link { border: 0; padding: 0; color: var(--cir-accent); background: transparent; cursor: pointer; }
+    #crm-insight-report .cir-action-list { counter-reset: actions; display: grid; gap: 10px; }
+    #crm-insight-report .cir-action-item { display: grid; grid-template-columns: 26px 1fr; gap: 9px; align-items: start; }
+    #crm-insight-report .cir-action-item::before { counter-increment: actions; content: counter(actions); display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; color: var(--cir-accent); background: var(--cir-accent-soft); font-size: 12px; }
+    #crm-insight-report .cir-resource { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--cir-line); }
+    #crm-insight-report .cir-resource:last-child { border-bottom: 0; }
+    #crm-insight-report .cir-resource-name { font-weight: 500; font-size: 13px; }
+    #crm-insight-report .cir-side { padding: 14px; border-left: 1px solid var(--cir-line); background: var(--cir-soft); overflow-y: auto; }
+    #crm-insight-report .cir-side h3 { margin: 0; font-size: 14px; font-weight: 500; }
+    #crm-insight-report .cir-side-note { margin: 6px 0 12px; color: var(--cir-subtext); font-size: 12px; line-height: 1.5; }
+    #crm-insight-report .cir-chat { display: grid; gap: 9px; }
+    #crm-insight-report .cir-message { padding: 9px 10px; border-radius: 9px; font-size: 12px; line-height: 1.5; background: var(--cir-shell); }
+    #crm-insight-report .cir-message.is-user { margin-left: 22px; color: var(--cir-accent); background: var(--cir-accent-soft); }
+    #crm-insight-report .cir-textarea { width: 100%; min-height: 76px; margin-top: 12px; padding: 9px; resize: vertical; border: 1px solid var(--cir-line); border-radius: 8px; color: var(--cir-text); background: var(--cir-shell); }
+    #crm-insight-report .cir-side .cir-action { width: 100%; margin-top: 8px; }
+    #crm-insight-report .cir-modal-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 18px; border-top: 1px solid var(--cir-line); }
+    #crm-insight-report .cir-feedback { display: flex; gap: 6px; align-items: center; color: var(--cir-subtext); font-size: 12px; }
+    #crm-insight-report .cir-feedback button { width: 34px; height: 34px; border: 1px solid var(--cir-line); border-radius: 8px; color: var(--cir-text); background: var(--cir-shell); cursor: pointer; }
+    #crm-insight-report .cir-foot-actions { display: flex; gap: 8px; }
+    #crm-insight-report .cir-toast { display: none; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 7; padding: 10px 14px; border-radius: 8px; color: var(--cir-text); background: var(--cir-shell); border: 1px solid var(--cir-line); box-shadow: 0 10px 30px light-dark(rgba(20,30,50,.18),rgba(0,0,0,.4)); }
+    #crm-insight-report .cir-toast.is-show { display: block; }
+    #crm-insight-report .cir-progress,
+    #crm-insight-report .cir-confirm { display: none; position: absolute; inset: 0; z-index: 6; place-items: center; padding: 24px; background: light-dark(rgba(24,32,51,.45),rgba(0,0,0,.62)); }
+    #crm-insight-report .cir-progress.is-open,
+    #crm-insight-report .cir-confirm.is-open { display: grid; }
+    #crm-insight-report .cir-dialog { width: min(470px,100%); padding: 20px; border: 1px solid var(--cir-line); border-radius: 12px; background: var(--cir-surface); }
+    #crm-insight-report .cir-dialog h3 { margin: 0; font-size: 17px; font-weight: 500; }
+    #crm-insight-report .cir-dialog p { color: var(--cir-subtext); line-height: 1.6; }
+    #crm-insight-report .cir-progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: var(--cir-soft); }
+    #crm-insight-report .cir-progress-value { width: 18%; height: 100%; border-radius: inherit; background: var(--cir-accent); transition: width .35s ease; }
+    #crm-insight-report .cir-conflict { padding: 11px; margin: 12px 0; border: 1px solid var(--cir-line); border-radius: 9px; background: var(--cir-soft); font-size: 13px; }
+    #crm-insight-report .cir-conflict strong { font-weight: 500; }
+    #crm-insight-report .cir-choice-row { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+    #crm-insight-report .cir-feedback-menu { display: none; position: absolute; left: 20px; bottom: 62px; z-index: 7; width: 280px; padding: 12px; border: 1px solid var(--cir-line); border-radius: 10px; background: var(--cir-surface); }
+    #crm-insight-report .cir-feedback-menu.is-open { display: block; }
+    #crm-insight-report .cir-feedback-menu label { display: flex; gap: 8px; align-items: start; padding: 6px 0; color: var(--cir-subtext); font-size: 12px; }
+    @media (max-width: 860px) {
+      #crm-insight-report .cir-report-body { grid-template-columns: 150px 1fr; }
+      #crm-insight-report .cir-side { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--cir-line); }
+      #crm-insight-report .cir-modal { max-height: none; }
+    }
+    @media (max-width: 620px) {
+      #crm-insight-report .cir-stage { min-height: 920px; }
+      #crm-insight-report .cir-customer-base { grid-template-columns: 1fr; }
+      #crm-insight-report .cir-base-panels { grid-template-columns: 1fr; }
+      #crm-insight-report .cir-modal-backdrop { padding: 10px; align-items: start; }
+      #crm-insight-report .cir-report-body { grid-template-columns: 1fr; }
+      #crm-insight-report .cir-report-nav { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--cir-line); }
+      #crm-insight-report .cir-report-nav button { width: auto; white-space: nowrap; }
+      #crm-insight-report .cir-modal-head,
+      #crm-insight-report .cir-toolbar,
+      #crm-insight-report .cir-modal-foot { align-items: stretch; flex-direction: column; }
+    }
+  &lt;/style&gt;
+
+  &lt;section class=&quot;cir-stage&quot;&gt;
+    &lt;div class=&quot;cir-crm-top&quot;&gt;&lt;div class=&quot;cir-brand&quot;&gt;客户管理 CRM&lt;/div&gt;&lt;div class=&quot;cir-breadcrumb&quot;&gt;我的客户 / 周某某 / 客户详情&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;cir-customer-base&quot;&gt;
+      &lt;div&gt;&lt;h1&gt;周某某&lt;/h1&gt;&lt;div class=&quot;cir-meta&quot;&gt;某新能源集团 · 董事长 · 山东区域 · 服务期至 2027-03-31&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;cir-page-actions&quot;&gt;&lt;button class=&quot;cir-action&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;upload&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;上传文件&lt;/button&gt;&lt;button class=&quot;cir-action&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;notebook-tabs&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;拜访前简报&lt;/button&gt;&lt;button class=&quot;cir-action cir-action-primary&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;sparkles&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;客户画像报告&lt;/button&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;cir-base-panels&quot;&gt;&lt;div class=&quot;cir-base-panel&quot;&gt;&lt;strong&gt;客户基础资料&lt;/strong&gt;&lt;div class=&quot;cir-lines&quot;&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cir-base-panel&quot;&gt;&lt;strong&gt;历史跟进记录&lt;/strong&gt;&lt;div class=&quot;cir-lines&quot;&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;cir-line&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;cir-modal-backdrop&quot;&gt;
+      &lt;section class=&quot;cir-modal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;cir-report-title&quot;&gt;
+        &lt;header class=&quot;cir-modal-head&quot;&gt;
+          &lt;div class=&quot;cir-title-row&quot;&gt;&lt;h2 id=&quot;cir-report-title&quot;&gt;周某某 · 客户洞察报告&lt;/h2&gt;&lt;span class=&quot;cir-chip is-reference&quot;&gt;AI生成 · 供参考&lt;/span&gt;&lt;span class=&quot;cir-chip is-success&quot;&gt;已采纳版本&lt;/span&gt;&lt;/div&gt;
+          &lt;button class=&quot;cir-action cir-action-ghost&quot; type=&quot;button&quot; aria-label=&quot;关闭报告&quot;&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;div class=&quot;cir-toolbar&quot;&gt;
+          &lt;div&gt;&lt;select id=&quot;cir-version&quot; class=&quot;cir-version&quot; aria-label=&quot;报告版本&quot;&gt;&lt;option&gt;V3 · 2026-09-12 已采纳&lt;/option&gt;&lt;option&gt;V2 · 2026-08-21 已采纳&lt;/option&gt;&lt;/select&gt;&lt;span class=&quot;cir-chip is-warning&quot;&gt;生成后新增 1 份资料&lt;/span&gt;&lt;/div&gt;
+          &lt;div class=&quot;cir-toolbar-actions&quot;&gt;&lt;button id=&quot;cir-evidence-toggle&quot; class=&quot;cir-action&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;quote&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;显示依据&lt;/button&gt;&lt;button id=&quot;cir-generate&quot; class=&quot;cir-action cir-action-primary&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;refresh-cw&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;生成报告&lt;/button&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;cir-report-body&quot;&gt;
+          &lt;nav class=&quot;cir-report-nav&quot; aria-label=&quot;报告目录&quot;&gt;
+            &lt;button class=&quot;is-active&quot; data-target=&quot;cir-summary-section&quot; type=&quot;button&quot;&gt;总结与建议&lt;/button&gt;
+            &lt;button data-target=&quot;cir-trace-section&quot; type=&quot;button&quot;&gt;跟进足迹&lt;/button&gt;
+            &lt;button data-target=&quot;cir-profile-section&quot; type=&quot;button&quot;&gt;个人与决策&lt;/button&gt;
+            &lt;button data-target=&quot;cir-company-section&quot; type=&quot;button&quot;&gt;企业发展&lt;/button&gt;
+            &lt;button data-target=&quot;cir-resource-section&quot; type=&quot;button&quot;&gt;资源推荐&lt;/button&gt;
+            &lt;button data-target=&quot;cir-risk-section&quot; type=&quot;button&quot;&gt;深度卡点&lt;/button&gt;
+          &lt;/nav&gt;
+
+          &lt;article class=&quot;cir-report-content&quot;&gt;
+            &lt;section id=&quot;cir-summary-section&quot; class=&quot;cir-report-section&quot;&gt;
+              &lt;h3&gt;一句话结论&lt;/h3&gt;
+              &lt;div class=&quot;cir-summary&quot;&gt;客户处于“业务转型需求明确、合作意愿仍需验证”的阶段；本轮应优先确认海外增长的真实决策事项，再匹配现有资源，而不是直接推进续约。&lt;/div&gt;
+              &lt;div class=&quot;cir-evidence&quot;&gt;依据：CRM-2026-08-20；拜访记录-03。“海外市场是下一阶段重点，但内部团队还没完全想清楚打法。”&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;cir-profile-section&quot; class=&quot;cir-report-section&quot;&gt;
+              &lt;h3&gt;关键判断&lt;/h3&gt;
+              &lt;div class=&quot;cir-list&quot;&gt;
+                &lt;div class=&quot;cir-insight&quot;&gt;&lt;div class=&quot;cir-insight-head&quot;&gt;&lt;span class=&quot;cir-insight-title&quot;&gt;需求：海外增长策略与组织能力&lt;/span&gt;&lt;span class=&quot;cir-chip&quot;&gt;明确表达&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;客户多次讨论海外光伏储能市场，希望找到兼顾战略和组织落地的方法。&lt;/div&gt;&lt;div class=&quot;cir-evidence&quot;&gt;2条独立记录支持：拜访记录-03，第18句；会议纪要-07，第6段。&lt;button class=&quot;cir-source-link&quot; type=&quot;button&quot;&gt;查看原文&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;cir-insight&quot;&gt;&lt;div class=&quot;cir-insight-head&quot;&gt;&lt;span class=&quot;cir-insight-title&quot;&gt;决策方式：先验证实际价值，再决定扩大投入&lt;/span&gt;&lt;span class=&quot;cir-chip&quot;&gt;行为归纳&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;对泛化理念兴趣有限，更关注真实案例、同行经验和可落地动作。&lt;/div&gt;&lt;div class=&quot;cir-evidence&quot;&gt;2条独立记录支持：拜访记录-03，第31句；CRM跟进-12，2026-07-09。&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;cir-insight&quot;&gt;&lt;div class=&quot;cir-insight-head&quot;&gt;&lt;span class=&quot;cir-insight-title&quot;&gt;风险：对当前资源匹配度存在疑虑&lt;/span&gt;&lt;span class=&quot;cir-chip is-warning&quot;&gt;待观察&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;该信号尚不足以判断流失或低续约意愿，需要下一次沟通确认。&lt;/div&gt;&lt;div class=&quot;cir-evidence&quot;&gt;来源：拜访记录-03，第44句。“课程还得再看看是不是适合我们现在的阶段。”&lt;/div&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;cir-trace-section&quot; class=&quot;cir-report-section&quot;&gt;
+              &lt;h3&gt;下一步动作建议【参考】&lt;/h3&gt;
+              &lt;div id=&quot;cir-action-list&quot; class=&quot;cir-action-list&quot;&gt;
+                &lt;div class=&quot;cir-action-item&quot; data-priority=&quot;1&quot;&gt;&lt;div&gt;&lt;strong&gt;一周内确认海外业务的真实决策议题&lt;/strong&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;责任人：客户经理；成功标准：确认一个具体问题及内部参与人。&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;cir-action-item&quot; data-priority=&quot;2&quot;&gt;&lt;div&gt;&lt;strong&gt;用一个同行案例验证客户对资源形式的偏好&lt;/strong&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;避免直接推销课程，先验证其更需要闭门交流、专家辅导还是团队共创。&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;cir-action-item&quot; data-priority=&quot;3&quot;&gt;&lt;div&gt;&lt;strong&gt;补充确认续约节奏&lt;/strong&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;在价值需求明确后再讨论续约，不输出报价、折扣或合同承诺。&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;cir-company-section&quot; class=&quot;cir-report-section&quot;&gt;&lt;h3&gt;企业发展情况&lt;/h3&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;企业处于海外业务扩张阶段，主营光伏储能相关业务。累计消费金额及已购项目来自CRM，AI仅用于判断历史付费习惯，不重算业绩或形成考核结论。&lt;/div&gt;&lt;/section&gt;
+            &lt;section id=&quot;cir-resource-section&quot; class=&quot;cir-report-section&quot;&gt;&lt;h3&gt;近期适配资源【参考】&lt;/h3&gt;&lt;div class=&quot;cir-resource&quot;&gt;&lt;div&gt;&lt;div class=&quot;cir-resource-name&quot;&gt;R-2026-018 · 海外经营闭门研讨会&lt;/div&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;匹配原因：对应客户明确表达的海外战略与组织落地需求。&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;cir-chip is-success&quot;&gt;报名中&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;cir-resource&quot;&gt;&lt;div&gt;&lt;div class=&quot;cir-resource-name&quot;&gt;活动策划方向：光伏储能企业出海圆桌&lt;/div&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;当前资源库无更细分的行业活动，仅作为运营策划方向。&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;cir-chip is-warning&quot;&gt;策划建议／尚未发布&lt;/span&gt;&lt;/div&gt;&lt;/section&gt;
+            &lt;section id=&quot;cir-risk-section&quot; class=&quot;cir-report-section&quot;&gt;&lt;h3&gt;深度卡点分析【参考】&lt;/h3&gt;&lt;div class=&quot;cir-insight-copy&quot;&gt;目前的关键卡点不是客户明确拒绝，而是需求与现有资源之间尚未完成价值验证。建议将“续约风险”保持为待观察，待客户经理确认后再决定是否调整风险等级。&lt;/div&gt;&lt;/section&gt;
+          &lt;/article&gt;
+
+          &lt;aside class=&quot;cir-side&quot;&gt;
+            &lt;h3&gt;对话修正&lt;/h3&gt;
+            &lt;p class=&quot;cir-side-note&quot;&gt;只修改本次报告草稿；点击采纳后才保存。关键阶段和风险等级需负责人复核后进入组织统计。&lt;/p&gt;
+            &lt;div id=&quot;cir-chat&quot; class=&quot;cir-chat&quot;&gt;&lt;div class=&quot;cir-message&quot;&gt;你可以告诉我哪里需要调整，例如“把跟进动作按优先级重排”。&lt;/div&gt;&lt;/div&gt;
+            &lt;textarea id=&quot;cir-chat-input&quot; class=&quot;cir-textarea&quot; placeholder=&quot;输入修改要求&quot; aria-label=&quot;输入报告修改要求&quot;&gt;&lt;/textarea&gt;
+            &lt;button id=&quot;cir-chat-send&quot; class=&quot;cir-action&quot; type=&quot;button&quot;&gt;发送并调整&lt;/button&gt;
+          &lt;/aside&gt;
+        &lt;/div&gt;
+
+        &lt;footer class=&quot;cir-modal-foot&quot;&gt;
+          &lt;div class=&quot;cir-feedback&quot;&gt;&lt;span&gt;本次报告是否有帮助？&lt;/span&gt;&lt;button id=&quot;cir-like&quot; type=&quot;button&quot; aria-label=&quot;有帮助&quot;&gt;&lt;i data-lucide=&quot;thumbs-up&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;button id=&quot;cir-dislike&quot; type=&quot;button&quot; aria-label=&quot;没帮助&quot;&gt;&lt;i data-lucide=&quot;thumbs-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
+          &lt;div class=&quot;cir-foot-actions&quot;&gt;&lt;button class=&quot;cir-action&quot; type=&quot;button&quot;&gt;暂不采纳&lt;/button&gt;&lt;button id=&quot;cir-adopt&quot; class=&quot;cir-action cir-action-success&quot; type=&quot;button&quot;&gt;&lt;i data-lucide=&quot;check&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;采纳并保存&lt;/button&gt;&lt;/div&gt;
+        &lt;/footer&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;cir-progress&quot; class=&quot;cir-progress&quot; aria-live=&quot;polite&quot;&gt;
+      &lt;div class=&quot;cir-dialog&quot;&gt;&lt;h3&gt;正在生成新报告&lt;/h3&gt;&lt;p id=&quot;cir-progress-copy&quot;&gt;读取已授权的CRM资料与用户勾选的上传文件…&lt;/p&gt;&lt;div class=&quot;cir-progress-track&quot;&gt;&lt;div id=&quot;cir-progress-value&quot; class=&quot;cir-progress-value&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;离开当前页面将中断本次生成，已采纳版本不会受影响。&lt;/p&gt;&lt;button id=&quot;cir-cancel-generation&quot; class=&quot;cir-action&quot; type=&quot;button&quot;&gt;中断生成&lt;/button&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;cir-confirm&quot; class=&quot;cir-confirm&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;cir-confirm-title&quot;&gt;
+      &lt;div class=&quot;cir-dialog&quot;&gt;&lt;h3 id=&quot;cir-confirm-title&quot;&gt;报告已保存，发现1项CRM字段冲突&lt;/h3&gt;&lt;div class=&quot;cir-conflict&quot;&gt;&lt;strong&gt;客户阶段&lt;/strong&gt;&lt;br&gt;CRM当前：稳定服务&lt;br&gt;本次报告建议：续约观察【待负责人复核】&lt;/div&gt;&lt;p&gt;先保存独立报告。你可以选择如何处理CRM字段；待复核期间，组织统计继续使用原已确认值。&lt;/p&gt;&lt;div class=&quot;cir-choice-row&quot;&gt;&lt;button class=&quot;cir-action&quot; data-choice=&quot;不更新&quot; type=&quot;button&quot;&gt;不更新&lt;/button&gt;&lt;button class=&quot;cir-action&quot; data-choice=&quot;合并备注&quot; type=&quot;button&quot;&gt;合并为备注&lt;/button&gt;&lt;button class=&quot;cir-action cir-action-primary&quot; data-choice=&quot;提交覆盖申请&quot; type=&quot;button&quot;&gt;提交覆盖申请&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;cir-feedback-menu&quot; class=&quot;cir-feedback-menu&quot;&gt;&lt;strong&gt;请选择主要原因&lt;/strong&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;cir-feedback&quot; value=&quot;有内容没依据&quot;&gt;有内容没依据&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;cir-feedback&quot; value=&quot;把我方建议写成客户需求&quot;&gt;把我方建议写成客户需求&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;cir-feedback&quot; value=&quot;建议太空泛&quot;&gt;建议太空泛，落不了地&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;cir-feedback&quot; value=&quot;资源匹配不准确&quot;&gt;推荐的活动／资源对不上客户&lt;/label&gt;&lt;/div&gt;
+    &lt;div id=&quot;cir-toast&quot; class=&quot;cir-toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;script&gt;
+    (() =&gt; {
+      const root = document.getElementById(&#x27;crm-insight-report&#x27;);
+      const modal = root.querySelector(&#x27;.cir-modal&#x27;);
+      const content = root.querySelector(&#x27;.cir-report-content&#x27;);
+      const toast = root.querySelector(&#x27;#cir-toast&#x27;);
+      function showToast(message) {
+        toast.textContent = message; toast.classList.add(&#x27;is-show&#x27;);
+        setTimeout(() =&gt; toast.classList.remove(&#x27;is-show&#x27;), 1500);
+      }
+      root.querySelector(&#x27;#cir-evidence-toggle&#x27;).addEventListener(&#x27;click&#x27;, event =&gt; {
+        modal.classList.toggle(&#x27;cir-show-evidence&#x27;);
+        event.currentTarget.innerHTML = modal.classList.contains(&#x27;cir-show-evidence&#x27;) ? &#x27;&lt;i data-lucide=&quot;eye-off&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;隐藏依据&#x27; : &#x27;&lt;i data-lucide=&quot;quote&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;显示依据&#x27;;
+        if (globalThis.lucide) lucide.createIcons({attrs:{width:16,height:16}});
+      });
+      root.querySelectorAll(&#x27;.cir-report-nav button&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;, () =&gt; {
+        root.querySelectorAll(&#x27;.cir-report-nav button&#x27;).forEach(item =&gt; item.classList.remove(&#x27;is-active&#x27;));
+        button.classList.add(&#x27;is-active&#x27;);
+        const target = root.querySelector(`#${button.dataset.target}`);
+        content.scrollTo({top: target.offsetTop - content.offsetTop, behavior:&#x27;smooth&#x27;});
+      }));
+      root.querySelectorAll(&#x27;.cir-source-link&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;, () =&gt; showToast(&#x27;已定位到拜访记录原句与来源位置&#x27;)));
+      root.querySelector(&#x27;#cir-chat-send&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+        const input = root.querySelector(&#x27;#cir-chat-input&#x27;);
+        const value = input.value.trim();
+        if (!value) { showToast(&#x27;请先输入修改要求&#x27;); return; }
+        const user = document.createElement(&#x27;div&#x27;); user.className = &#x27;cir-message is-user&#x27;; user.textContent = value;
+        const reply = document.createElement(&#x27;div&#x27;); reply.className = &#x27;cir-message&#x27;; reply.textContent = &#x27;已按优先级重新整理动作建议，事实与来源未改变。请确认后再采纳。&#x27;;
+        root.querySelector(&#x27;#cir-chat&#x27;).append(user, reply);
+        const list = root.querySelector(&#x27;#cir-action-list&#x27;);
+        [...list.children].sort((a,b) =&gt; Number(a.dataset.priority)-Number(b.dataset.priority)).forEach(item =&gt; list.appendChild(item));
+        input.value = &#x27;&#x27;;
+        showToast(&#x27;报告草稿已调整，尚未保存&#x27;);
+      });
+      root.querySelector(&#x27;#cir-generate&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+        const overlay = root.querySelector(&#x27;#cir-progress&#x27;);
+        const bar = root.querySelector(&#x27;#cir-progress-value&#x27;);
+        const copy = root.querySelector(&#x27;#cir-progress-copy&#x27;);
+        overlay.classList.add(&#x27;is-open&#x27;); bar.style.width = &#x27;18%&#x27;;
+        setTimeout(() =&gt; { bar.style.width = &#x27;55%&#x27;; copy.textContent = &#x27;整合多源记录、识别冲突并绑定来源…&#x27;; }, 400);
+        setTimeout(() =&gt; { bar.style.width = &#x27;88%&#x27;; copy.textContent = &#x27;生成画像、跟进建议与资源匹配结果…&#x27;; }, 800);
+        setTimeout(() =&gt; { overlay.classList.remove(&#x27;is-open&#x27;); bar.style.width = &#x27;18%&#x27;; root.querySelector(&#x27;.cir-title-row .is-success&#x27;).textContent = &#x27;新草稿 · 未采纳&#x27;; showToast(&#x27;新报告草稿已生成，请检查后采纳&#x27;); }, 1250);
+      });
+      root.querySelector(&#x27;#cir-cancel-generation&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { root.querySelector(&#x27;#cir-progress&#x27;).classList.remove(&#x27;is-open&#x27;); showToast(&#x27;本次生成已中断，已采纳版本不受影响&#x27;); });
+      root.querySelector(&#x27;#cir-adopt&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; root.querySelector(&#x27;#cir-confirm&#x27;).classList.add(&#x27;is-open&#x27;));
+      root.querySelectorAll(&#x27;[data-choice]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;, () =&gt; {
+        root.querySelector(&#x27;#cir-confirm&#x27;).classList.remove(&#x27;is-open&#x27;);
+        showToast(`独立报告已保存；CRM字段处理：${button.dataset.choice}`);
+        root.querySelector(&#x27;.cir-title-row .is-success&#x27;).textContent = &#x27;已采纳版本&#x27;;
+      }));
+      root.querySelector(&#x27;#cir-like&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; showToast(&#x27;已记录“有帮助”&#x27;));
+      root.querySelector(&#x27;#cir-dislike&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; root.querySelector(&#x27;#cir-feedback-menu&#x27;).classList.toggle(&#x27;is-open&#x27;));
+      root.querySelectorAll(&#x27;input[name=&quot;cir-feedback&quot;]&#x27;).forEach(item =&gt; item.addEventListener(&#x27;change&#x27;, () =&gt; { root.querySelector(&#x27;#cir-feedback-menu&#x27;).classList.remove(&#x27;is-open&#x27;); showToast(`已记录：${item.value}`); }));
+      if (globalThis.Tweak) {
+        const options = { evidence: false, accent: &#x27;#315efb&#x27; };
+        const tweak = new Tweak({container: root, onChange: () =&gt; {
+          modal.classList.toggle(&#x27;cir-show-evidence&#x27;, options.evidence);
+          root.style.setProperty(&#x27;--cir-accent&#x27;, options.accent);
+        }});
+        tweak.addToggle(options, &#x27;evidence&#x27;, {label:&#x27;默认展开证据&#x27;, reference:&#x27;report.evidence&#x27;});
+        tweak.addColorPicker(options, &#x27;accent&#x27;, {label:&#x27;品牌强调色&#x27;, reference:&#x27;--cir-accent&#x27;});
+      }
+    })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
